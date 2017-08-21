@@ -1,8 +1,7 @@
 BASH Final   - https://github.com/hashtagcyber/examples
-	30 Points - Runs on 1 different distro
-	25 Points - Performs 3 "security related" tasks
-	 5 Points - Receives input via CLI argument
-	 5 Points - Has a "default" setting if CLI arg is unused
+	30 Points - Doesn't crash when I run it
+	25 Points - Performs 2 "security related" tasks
+	10 Points - Receives input via CLI argument
 	10 Points - Uses comments to explain codeblocks
 	10 Points - Uses functions
 	10 Points - Uses loops
