@@ -1,0 +1,28 @@
+#!/bin/bash
+
+
+#wait some few seconds before the bash execute itself to the next commands
+trap "set +x; sleep 5; set +x" DEBUG
+
+{
+#check if the ip is correct and reachable
+if ping -c4 $1 &> /dev/null
+then 
+echo $1 The IP you have entered is working fine
+else
+echo $1 The IP you have entered is not working
+fi
+}
+
+{
+#ping my host
+ping -c1 $1; echo $?
+}
+
+
+{
+#login history
+last
+}
+
+
