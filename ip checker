@@ -1,0 +1,56 @@
+#!/bin/bash
+
+
+#wait some few seconds before the bash execute itself to the next commands
+trap "set +x; sleep 2; set +x" DEBUG
+
+#please wait for the process message
+echo "Please wait......"
+
+{
+#check if the ip is correct and reachable
+if ping -c4 $1 &> /dev/null
+then 
+echo $1 The IP you have entered is working fine
+else
+echo $1 The IP you have entered is not working
+fi
+
+#if the command is succeeded, continue executing the program
+if command ; then
+	echo "Command Succeeded"
+	else
+	echo "Command Failed"	
+fi
+}
+
+<<eor
+#break if the IP is not working or incorrect
+{
+if $command is false; then
+break
+fi
+} 
+eor
+
+{
+#ping my host
+ping -c1 $1; echo $?
+}
+
+
+{
+#login history
+last
+}
+
+
+<<EOF
+main()
+i=$1
+{
+for i in /ect/*.conf; do cp $i /backup; done
+}
+
+main $@
+EOF
